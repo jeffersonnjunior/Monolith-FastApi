@@ -5,73 +5,7 @@ description = "Professional FastAPI skeleton with modular package structure."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-  "fastapi>=0.115.0",
-  "pydantic-settings>=2.6.0",
-  "uvicorn>=0.32.0",
-]
-
-[dependency-groups]
-dev = [
-  "mypy>=1.13.0",
-  "pre-commit>=4.0.0",
-  "pytest>=8.3.0",
-  "pytest-asyncio>=0.24.0",
-  "pytest-cov>=6.0.0",
-  "ruff>=0.7.0",
-]
-
-[tool.uv]
-default-groups = ["dev"]
-
-[tool.uv.scripts]
-run = "uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"
-lint = "ruff check ."
-fmt = "ruff format ."
-typecheck = "mypy app tests"
-test = "pytest --cov=app --cov-report=term-missing"
-
-[tool.ruff]
-line-length = 100
-target-version = "py313"
-
-[tool.ruff.lint]
-select = [
-  "E",
-  "F",
-  "I",
-  "B",
-  "UP",
-  "N",
-]
-extend-ignore = ["B008"]
-
-[tool.ruff.format]
-quote-style = "double"
-indent-style = "space"
-
-[tool.mypy]
-python_version = "3.13"
-strict = true
-warn_unreachable = true
-pretty = true
-show_error_codes = true
-plugins = []
-
-[[tool.mypy.overrides]]
-module = ["tests.*"]
-disallow_untyped_defs = false
-
-[tool.pytest.ini_options]
-addopts = "-q"
-testpaths = ["tests"]
-asyncio_mode = "auto"
-[project]
-name = "monolith-fastapi"
-version = "0.1.0"
-description = "Professional FastAPI skeleton with modular package structure."
-readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
+  "anyio>=4.11.0",
   "fastapi>=0.115.0",
   "pydantic-settings>=2.6.0",
   "uvicorn>=0.32.0",
