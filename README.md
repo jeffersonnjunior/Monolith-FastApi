@@ -56,13 +56,13 @@ Backend FastAPI com arquitetura modular, banco PostgreSQL assíncrono, migration
 3. Rodar migrations:
 
    ```bash
-   uv run db-upgrade
+   uv run alembic upgrade head
    ```
 
 4. Subir API:
 
    ```bash
-   uv run run
+   uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
    ```
 
 ## Setup full Docker Compose
@@ -75,24 +75,24 @@ docker compose up --build
 
 - Nova revision autogerada:
   ```bash
-  uv run db-revision -m "mensagem_da_migration"
+  uv run alembic revision --autogenerate -m "mensagem_da_migration"
   ```
 - Aplicar migration:
   ```bash
-  uv run db-upgrade
+  uv run alembic upgrade head
   ```
 - Reverter última migration:
   ```bash
-  uv run db-downgrade
+  uv run alembic downgrade -1
   ```
 
 ## Comandos úteis
 
-- Rodar app: `uv run run`
-- Testes: `uv run test`
-- Lint: `uv run lint`
-- Formatação: `uv run fmt`
-- Typecheck: `uv run typecheck`
+- Rodar app: `uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000`
+- Testes: `uv run pytest --cov=app --cov-report=term-missing`
+- Lint: `uv run ruff check .`
+- Formatação: `uv run ruff format .`
+- Typecheck: `uv run mypy app tests`
 
 ## Healthcheck
 

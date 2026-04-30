@@ -28,16 +28,6 @@ dev = [
 [tool.uv]
 default-groups = ["dev"]
 
-[tool.uv.scripts]
-run = "uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"
-lint = "ruff check ."
-fmt = "ruff format ."
-typecheck = "mypy app tests"
-test = "pytest --cov=app --cov-report=term-missing"
-db-revision = "alembic revision --autogenerate"
-db-upgrade = "alembic upgrade head"
-db-downgrade = "alembic downgrade -1"
-
 [tool.ruff]
 line-length = 100
 target-version = "py313"
