@@ -17,6 +17,3 @@ __all__ = [
     "TransferResponse",
     "StatementResponse",
 ]
-from app.schemas.health import HealthResponse
-
-__all__ = ["HealthResponse"]
