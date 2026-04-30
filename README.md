@@ -1,6 +1,6 @@
 # Monolith FastAPI
 
-Backend FastAPI com arquitetura modular, banco PostgreSQL assíncrono, migrations com Alembic e setup pronto para produção.
+Backend FastAPI com arquitetura modular, banco PostgreSQL assíncrono, migrations com Alembic
 
 ## Stack
 
