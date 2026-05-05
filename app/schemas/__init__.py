@@ -7,6 +7,7 @@ from app.schemas.bank import (
     TransferRequest,
     TransferResponse,
 )
+from app.schemas.checkout import CheckoutRequest, CheckoutResponse
 
 __all__ = [
     "HealthResponse",
@@ -16,4 +17,6 @@ __all__ = [
     "TransferRequest",
     "TransferResponse",
     "StatementResponse",
+    "CheckoutRequest",
+    "CheckoutResponse",
 ]
